@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bulma": "^0.7.2",
+    "chuck-norris-api": "^1.0.9",
     "express": "^4.16.4",
     "mysql2": "^1.6.4",
     "path": "^0.12.7"

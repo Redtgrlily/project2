@@ -14,7 +14,9 @@
     "chuck-norris-api": "^1.0.9",
     "chucknorris-io": "^1.0.5",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "mysql2": "^1.6.4",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^4.42.0"
   }
 }

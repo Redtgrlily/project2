@@ -44,5 +44,5 @@ $(document).ready(function() {
         }).then(getJokes);
     }
 
-    //CHARLIE START HERE!
+   
 })

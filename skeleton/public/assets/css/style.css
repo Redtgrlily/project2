@@ -1,0 +1,68 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-image: url(../img/machineGun.png);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  /* image-rendering: pixelated; */
+}
+.m-top {
+  margin-top: 2rem;
+}
+/*doesn't appear to be working*/
+.m-bottom {
+  margin-bottom: 4rem;
+}
+.main-title {
+  font-size: 5rem;
+  color: 	white;
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+}
+.sub-title {
+  color: 	#336699;
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+}
+/*joke area styling*/
+.your-joke {
+  color: 	white;
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+}
+.chucks-joke {
+  color: 	white;
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+}
+/*textarea styling*/
+.insert-spot {
+  width: 350px;
+  border-radius: 5rem;
+  background-color: rgb(239, 247, 255,0.8);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0.4;
+}
+
+.yourJokeSection {
+  /* width: 350px; */
+  /* border-radius: 5rem; */
+  background-color: rgb(239, 247, 255,0.8);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  opacity: 0.4;
+}
+
+.chucksJokeSection  {
+  background-color: rgb(239, 247, 255,0.8);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  opacity: 0.4;
+}

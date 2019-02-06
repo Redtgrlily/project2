@@ -29,7 +29,7 @@ $(document).ready(function() {
     //Gets jokes from DB and update list view
     function getJokes() {
         $.get("/api/jokelist", function(data) {
-            jokelist = data;
+            jokeList = data;
             initializeRows();
         });
     }
@@ -40,7 +40,7 @@ $(document).ready(function() {
         var id = $(this).data("id");
         $.ajax({
             method: "DELETE",
-            url: "/api/jokes/" + id
+            url: "/api/jokelist/" + id
         }).then(getJokes);
     }
 
@@ -63,7 +63,7 @@ $(document).ready(function() {
           updateJokeList(updatedJokeList);
         }
       }
-
+      //updates the joke item in list
       function updateJokeList(jokeList) {
           $.ajax({
               method: "PUT",
@@ -71,7 +71,7 @@ $(document).ready(function() {
               data: jokeList
           }).then(jokeList);
       }
-
+      //cancel editing the joke
       function cancelEdit() {
           var currentJoke = $(this).data("jokeitem");
           if (currentJoke) {
@@ -98,7 +98,7 @@ $(document).ready(function() {
     
         $newInputRow.find("button.delete").data("id", jokeList.id);
         $newInputRow.find("input.edit").css("display", "none");
-        $newInputRow.data("jokeList", jokeList);
+        $newInputRow.data("jokeitem", jokeList);
         if (jokeList.complete) {
           $newInputRow.find("span").css("text-decoration", "line-through");
         }
@@ -108,15 +108,10 @@ $(document).ready(function() {
       function insertJoke(event) {
         event.preventDefault();
         var jokelist = {
-          name: $newItemInput.val().trim(),
-          text: $newItemInput.val().trim(),
+           text: $newItemInput.val().trim(),
         };
     
-        $.post("/api/jokeList", jokelist, getJokeList);
+        $.post("/api/jokeList", jokelist, getJokes);
         $newItemInput.val("");
       }
-
-  
-})
-
-    })
+});

@@ -44,6 +44,7 @@ $(document).ready(function() {
         }).then(getJokes);
     }
 
+
     //SHowing input box for jokes to be edited
     function editJoke() {
         var currentJoke = $(this).data("jokeitem");
@@ -116,6 +117,7 @@ $(document).ready(function() {
         $newItemInput.val("");
       }
 
-    //CHARLIE START HERE!
-
+  
 })
+
+    })

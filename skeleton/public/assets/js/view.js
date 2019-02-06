@@ -5,9 +5,9 @@ $(document).ready(function() {
     var $jokeListContainer = $(".jokelist-container");
     //Event listeners for CRUD
     $(document).on("click", "button.delete", deleteJoke);
-    $(document).on("click", ".jokelist-item", editJoke);
-    $(document).on("keyup", ".jokelist-item", finishEdit);
-    $(document).on("blur", ".jokelist-item", cancelEdit);
+    $(document).on("click", ".jokeitem", editJoke);
+    $(document).on("keyup", ".jokeitem", finishEdit);
+    $(document).on("blur", ".jokeitem", cancelEdit);
     $(document).on("submit", "#jokelist-form", insertJoke);
 
     //Jokes array
@@ -86,13 +86,12 @@ $(document).ready(function() {
       function createNewRow(jokeList) {
         var $newInputRow = $(
           [
-            "<li class='list-group-item joke-item'>",
+            "<li class='list-group-item jokeitem'>",
             "<span>",
             jokeList.text,
             "</span>",
             "<input type='text' class='edit' style='display: none;'>",
             "<button class='delete btn btn-danger'>x</button>",
-            "<button class='complete btn btn-primary'>✓</button>",
             "</li>"
           ].join("")
         );

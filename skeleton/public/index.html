@@ -4,64 +4,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <title>Chuck Norris Joke Approval</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="assets/js/api_chuck.js"></script>
 </head>
 
 <body>
 
-  <section class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title is-1">Joke List</h1>
-        <h2 class="subtitle">A Classic Chuck Norris</h2>
-      </div>
-    </div>
-  </section>
+  <!-- <div class="background"></div> -->
 
-  <div class="columns">
-    <div class="column">
-      <div class="card">
-        <!--input field for data base jokes-->
-        <div class="card-content">
-          <div class="field">
-            <div class="control">
-              <input class="new-item form-control" type="text" placeholder="Primary input">
-            </div>
+  <div class="container">
+
+    <h1 class="title main-title has-text-white is-1 m-top">The Joke List</h1>
+    <h2 class="title sub-title has-text-primary is-2 m-bottom">A Chuck Norris Classic</h2>
+    <h2 class="title sub-title has-text-primary is-3 m-bottom">Have a joke and need a place to store it?</h2>
+
+    <br>
+    <br>
+
+    <div class="columns">
+      <div class="column is-half">
+        <p class="title is-4 has-text-white your-joke">Create and store your jokes</p>
+        <!--insert your joke here: id="joke"-->
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea is-success is-large is-centered insert-spot" type="text" id="joke" placeholder="Insert jokes here"></textarea>
           </div>
         </div>
       </div>
-      <!--area to populate new data base jokes-->
-      <div class="card todo-container">
-        <div class="card-content">
-          <div id=""></div>
+      <div class="column is-half">
+        <!--Click on the chuck Norris Jokes-->
+        <p class="title is-4 has-text-white chucks-joke">Click the button and become inspired!</p>
+        <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    
+    <div class="columns">
+      <!--Area where your jokes will populate-->
+      <div class="column is-half">
+        <div class="card yourJokeSection">
+          <header class="card-header">
+            <p class="card-header-title is-centered">Your awesome list of jokes</p>
+          </header>
+          <div class="card-content"></div>
+        </div>
+      </div>
+      <!--Area where Chucks jokes will populate-->
+      <div class="column is-half">
+        <div class="card chucksJokeSection">
+          <header class="card-header">
+            <p class="card-header-title is-centered">Chuck's insanely awesome list of jokes!</p>
+          </header>
+          <div class="card-content" id="myjoke"></div>
         </div>
       </div>
     </div>
-    <div class="column">
-      <div class="card">
-        <!--input field for Chuck Norris Jokes-->
-        <div class="card-content">
-          <div class="field">
-            <button class="button">Button</button>
-          </div>
-        </div>
-      </div>
-      <!--area to populate Chuck Norris Jokes-->
-      <div class="card">
-        <div class="card-content">
-          <div id=""></div>
-        </div>
-      </div>
-    </div>
+
+
   </div>
-
 
 </body>
 

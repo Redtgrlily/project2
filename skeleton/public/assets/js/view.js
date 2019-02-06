@@ -5,9 +5,9 @@ $(document).ready(function() {
     var $jokeListContainer = $(".jokelist-container");
     //Event listeners for CRUD
     $(document).on("click", "button.delete", deleteJoke);
-    $(document).on("click", ".jokelist-item", editJoke);
-    $(document).on("keyup", ".jokelist-item", finishEdit);
-    $(document).on("blur", ".jokelist-item", cancelEdit);
+    $(document).on("click", ".jokeitem", editJoke);
+    $(document).on("keyup", ".jokeitem", finishEdit);
+    $(document).on("blur", ".jokeitem", cancelEdit);
     $(document).on("submit", "#jokelist-form", insertJoke);
 
     //Jokes array

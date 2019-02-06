@@ -86,13 +86,12 @@ $(document).ready(function() {
       function createNewRow(jokeList) {
         var $newInputRow = $(
           [
-            "<li class='list-group-item joke-item'>",
+            "<li class='list-group-item jokeitem'>",
             "<span>",
             jokeList.text,
             "</span>",
             "<input type='text' class='edit' style='display: none;'>",
             "<button class='delete btn btn-danger'>x</button>",
-            "<button class='complete btn btn-primary'>✓</button>",
             "</li>"
           ].join("")
         );

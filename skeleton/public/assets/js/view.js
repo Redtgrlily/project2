@@ -1,14 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
     //Input field reference where user adds a new joke.
-    var $newItemInput = $("input.new-item");
+    var $newItemInput = $(".textarea");
     //Display jokes added in the joke list
     var $jokeListContainer = $(".jokelist-container");
     //Event listeners for CRUD
     $(document).on("click", "button.delete", deleteJoke);
-    $(document).on("click", ".jokeitem", editJoke);
-    $(document).on("keyup", ".jokeitem", finishEdit);
-    $(document).on("blur", ".jokeitem", cancelEdit);
-    $(document).on("submit", "#jokelist-form", insertJoke);
+    $(document).on("click", ".jokelist-item", editJoke);
+    $(document).on("keyup", ".jokelist-item", finishEdit);
+    $(document).on("blur", ".jokelist-item", cancelEdit);
+    $(document).on("click", "#jokelist-form", insertJoke);
 
     //Jokes array
     var jokeList = [];
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     //Gets jokes from DB and update list view
     function getJokes() {
-        $.get("/api/jokelist", function(data) {
+        $.get("/api/jokeList", function (data) {
             jokeList = data;
             initializeRows();
         });
@@ -58,10 +58,23 @@ $(document).ready(function() {
     function finishEdit(event) {
         var updatedJokeList = $(this).data("jokeitem");
         if (event.which === 13) {
-          updatedJokeList.text = $(this).children("input").val().trim();
-          $(this).blur();
-          updateJokeList(updatedJokeList);
+            updatedJokeList.text = $(this).children("input").val().trim();
+            $(this).blur();
+            updateJokeList(updatedJokeList);
         }
+    }
+
+    function updateJokeList(jokeList) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/jokeList",
+            data: jokeList
+        }).then(jokeList);
+    }
+
+    function cancelEdit() {
+        var currentJoke = $(this).data("jokeitem");
+        if (currentJoke) {
       }
       //updates the joke item in list
       function updateJokeList(jokeList) {
@@ -79,12 +92,22 @@ $(document).ready(function() {
             $(this).children("input.edit").val(currentJoke.text);
             $(this).children("span").show();
             $(this).children("button").show();
-          }
-      }
+        }
+    }
 
-      //new joke
-      function createNewRow(jokeList) {
+    //new joke
+    function createNewRow(jokeList) {
         var $newInputRow = $(
+            [
+                "<li class='list-group-item joke-item'>",
+                "<span>",
+                jokeList.text,
+                "</span>",
+                "<input type='text' class='edit' style='display: none;'>",
+                "<button class='delete btn btn-danger'>x</button>",
+                "<button class='complete btn btn-primary'>✓</button>",
+                "</li>"
+            ].join("")
           [
             "<li class='list-group-item jokeitem'>",
             "<span>",
@@ -95,19 +118,31 @@ $(document).ready(function() {
             "</li>"
           ].join("")
         );
-    
+
         $newInputRow.find("button.delete").data("id", jokeList.id);
         $newInputRow.find("input.edit").css("display", "none");
         $newInputRow.data("jokeitem", jokeList);
         if (jokeList.complete) {
-          $newInputRow.find("span").css("text-decoration", "line-through");
+            $newInputRow.find("span").css("text-decoration", "line-through");
         }
         return $newInputRow;
-      }
-      //puts joke in DB
-      function insertJoke(event) {
+    }
+    //puts joke in DB
+    function insertJoke(event) {
         event.preventDefault();
         var jokelist = {
+            name: $newItemInput.val().trim(),
+            text: $newItemInput.val().trim(),
+        };
+
+        $.post("/api/jokeList", jokelist, getJokeList);
+        $newItemInput.val("");
+    }
+
+
+});
+
+
            text: $newItemInput.val().trim(),
         };
     

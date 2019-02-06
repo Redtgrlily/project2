@@ -40,7 +40,7 @@ $(document).ready(function () {
         var id = $(this).data("id");
         $.ajax({
             method: "DELETE",
-            url: "/api/jokes/" + id
+            url: "/api/jokelist/" + id
         }).then(getJokes);
     }
 
@@ -75,6 +75,19 @@ $(document).ready(function () {
     function cancelEdit() {
         var currentJoke = $(this).data("jokeitem");
         if (currentJoke) {
+      }
+      //updates the joke item in list
+      function updateJokeList(jokeList) {
+          $.ajax({
+              method: "PUT",
+              url: "/api/jokelist",
+              data: jokeList
+          }).then(jokeList);
+      }
+      //cancel editing the joke
+      function cancelEdit() {
+          var currentJoke = $(this).data("jokeitem");
+          if (currentJoke) {
             $(this).children().hide();
             $(this).children("input.edit").val(currentJoke.text);
             $(this).children("span").show();
@@ -95,11 +108,20 @@ $(document).ready(function () {
                 "<button class='complete btn btn-primary'>✓</button>",
                 "</li>"
             ].join("")
+          [
+            "<li class='list-group-item jokeitem'>",
+            "<span>",
+            jokeList.text,
+            "</span>",
+            "<input type='text' class='edit' style='display: none;'>",
+            "<button class='delete btn btn-danger'>x</button>",
+            "</li>"
+          ].join("")
         );
 
         $newInputRow.find("button.delete").data("id", jokeList.id);
         $newInputRow.find("input.edit").css("display", "none");
-        $newInputRow.data("jokeList", jokeList);
+        $newInputRow.data("jokeitem", jokeList);
         if (jokeList.complete) {
             $newInputRow.find("span").css("text-decoration", "line-through");
         }
@@ -121,3 +143,10 @@ $(document).ready(function () {
 });
 
 
+           text: $newItemInput.val().trim(),
+        };
+    
+        $.post("/api/jokeList", jokelist, getJokes);
+        $newItemInput.val("");
+      }
+});

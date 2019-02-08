@@ -13,16 +13,16 @@
 
   <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Permanent+Marker" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Permanent+Marker|Russo+One" rel="stylesheet">
+
   <script src="https://code.jquery.com/jquery.js"></script>
-<<<<<<< HEAD
   <script src="assets/js/api_chuck.js"></script>
   <script src="assets/js/view.js"></script>
   <script src="assets/js/navbar.js"></script>
-=======
-  <script src="js/api_chuck.js"></script>
-  <script src="js/view.js"></script>
-
->>>>>>> master
 </head>
 
 <body>
@@ -30,7 +30,7 @@
   <nav id="navMenu" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <span class="navbar-brand title main-title has-text-primary is-2">Joke List</span>
+        <span class="navbar-brand title nav-title has-text-primary is-2">Joke List</span>
       </a>
       <a role="button" id="navbar-burger-id" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
@@ -38,21 +38,17 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-
     <div id="navbar-menu-id" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="#top">
           Your Jokes
         </a>
-
-        <a class="navbar-item" href="#chuck">
+        <a class="navbar-item" href="#hack1">
           Chuck Jokes
         </a>
-
-        <a class="navbar-item" href="#footer">
+        <a class="navbar-item" href="#hack2">
           Developers
         </a>
-
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
@@ -67,18 +63,15 @@
         </div>
       </div>
   </nav>
-
-
+<!--Beginning of content-->
   <div class="container">
-    <h1 class="title main-title has-text-white is-1 m-top">Store Your Jokes</h1>
-    <h2 class="title sub-title has-text-primary is-2 m-bottom">And then ask yourself, would Chuck Norris approve?</h2>
-    <!-- <h2 class="title sub-title has-text-primary is-3 m-bottom">Have a joke and need a place to store it?</h2> -->
+    <h1 class="title main-title has-text-white is-1 m-top">Jokes On Demand</h1>
+    <h2 class="title sub-title has-text-primary is-2 m-bottom">Create and store your jokes with this easy to use app</h2>
     <br>
     <br>
     <!--insert your joke here: id="joke"-->
     <div class="columns">
       <div class="column is-8 is-offset-2">
-        <p class="title is-4 has-text-white your-joke">Create and store your jokes</p>
         <div class="field">
           <div class="control">
             <textarea class="is-success is-large is-centered insert-spot" type="text" placeholder="Insert jokes here"></textarea>
@@ -101,12 +94,15 @@
     </div>
     <br>
     <br>
+    <!--work around for responsiveness-->
+    <div id="hack1"></div>
     <br>
     <br>
     <!--Click on the chuck Norris Jokes-->
     <div class="columns" id="chuck">
       <div class="column is-8 is-offset-2">
-        <p class="title is-4 has-text-white chucks-joke">Click the button and become inspired!</p>
+        <p class="title is-1 has-text-primary chucks-joke">Jaw dropping Chuck Norris jokes</p>
+        <p class="title is-2 has-text-white chucks-joke">for inspiration</p>
         <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
       </div>
     </div>
@@ -124,16 +120,11 @@
   <br>
   <br>
   <br>
+  <!--work around for responsiveness-->
+  <div id="hack2"></div>
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
   <footer class="footer has-background-grey-dark" id="footer">
 
     <div class="tile is-ancestor">

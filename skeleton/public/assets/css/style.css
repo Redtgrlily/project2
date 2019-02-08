@@ -12,22 +12,28 @@ body, html {
   /* image-rendering: pixelated; */
 }
 .m-top {
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 /*doesn't appear to be working*/
 .m-bottom {
   margin-bottom: 4rem;
 }
+.nav-title {
+  font-family: 'Luckiest Guy', cursive;
+}
 .main-title {
   font-size: 5rem;
   color: 	white;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
 }
 .sub-title {
   color: 	#336699;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
+}
+#chuck {
+  margin-top: 4rem;
 }
 /*joke area styling*/
 .your-joke {
@@ -36,8 +42,7 @@ body, html {
   text-align: center;
 }
 .chucks-joke {
-  color: 	white;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
 }
 /*textarea styling*/

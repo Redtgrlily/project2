@@ -14,14 +14,61 @@
   <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery.js"></script>
+<<<<<<< HEAD
+  <script src="assets/js/api_chuck.js"></script>
+  <script src="assets/js/view.js"></script>
+  <script src="assets/js/navbar.js"></script>
+=======
   <script src="js/api_chuck.js"></script>
   <script src="js/view.js"></script>
 
+>>>>>>> master
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav id="navMenu" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <span class="navbar-brand title main-title has-text-primary is-2">Joke List</span>
+      </a>
+      <a role="button" id="navbar-burger-id" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-  <!-- <div class="background"></div> -->
+    <div id="navbar-menu-id" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#top">
+          Your Jokes
+        </a>
+
+        <a class="navbar-item" href="#chuck">
+          Chuck Jokes
+        </a>
+
+        <a class="navbar-item" href="#footer">
+          Developers
+        </a>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+
+
   <div class="container">
     <h1 class="title main-title has-text-white is-1 m-top">Store Your Jokes</h1>
     <h2 class="title sub-title has-text-primary is-2 m-bottom">And then ask yourself, would Chuck Norris approve?</h2>
@@ -57,7 +104,7 @@
     <br>
     <br>
     <!--Click on the chuck Norris Jokes-->
-    <div class="columns">
+    <div class="columns" id="chuck">
       <div class="column is-8 is-offset-2">
         <p class="title is-4 has-text-white chucks-joke">Click the button and become inspired!</p>
         <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
@@ -87,7 +134,7 @@
   <br>
   <br>
 
-  <footer class="footer has-background-grey-dark">
+  <footer class="footer has-background-grey-dark" id="footer">
 
     <div class="tile is-ancestor">
       <div class="tile is-parent">

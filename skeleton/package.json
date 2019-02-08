@@ -10,12 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
     "bulma": "^0.7.2",
     "chuck-norris-api": "^1.0.9",
     "chucknorris-io": "^1.0.5",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "fs": "0.0.1-security",
     "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "sequelize": "^4.42.0"
   }

@@ -14,8 +14,9 @@
   <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="assets/js/api_chuck.js"></script>
-  <script src="assets/js/view.js"></script>
+  <script src="js/api_chuck.js"></script>
+  <script src="js/view.js"></script>
+
 </head>
 
 <body>
@@ -33,10 +34,10 @@
         <p class="title is-4 has-text-white your-joke">Create and store your jokes</p>
         <div class="field">
           <div class="control">
-            <textarea class="textarea is-success is-large is-centered insert-spot" type="text" placeholder="Insert jokes here"></textarea>
+            <textarea class="is-success is-large is-centered insert-spot" type="text" placeholder="Insert jokes here"></textarea>
           </div>
         </div>
-        <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="jokelist-form"><strong>Click Me</strong></a>
+        <a class="textarea button is-danger is-inverted is-outlined is-large is-fullwidth" id="jokelist-form"><strong>Click Me</strong></a>
       </div>
     </div>
     <br>
@@ -47,7 +48,7 @@
           <header class="card-header">
             <p class="card-header-title is-centered">Your awesome list of jokes</p>
           </header>
-          <div class="card-content jokelist-container"></div>
+          <div class="card-content jokelist-container" id="jokelist-item" ></div>
         </div>
       </div>
     </div>

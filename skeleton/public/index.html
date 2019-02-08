@@ -21,20 +21,16 @@
 <body>
 
   <!-- <div class="background"></div> -->
-
   <div class="container">
-
-    <h1 class="title main-title has-text-white is-1 m-top">The Joke List</h1>
-    <h2 class="title sub-title has-text-primary is-2 m-bottom">A Chuck Norris Classic</h2>
-    <h2 class="title sub-title has-text-primary is-3 m-bottom">Have a joke and need a place to store it?</h2>
-
+    <h1 class="title main-title has-text-white is-1 m-top">Store Your Jokes</h1>
+    <h2 class="title sub-title has-text-primary is-2 m-bottom">And then ask yourself, would Chuck Norris approve?</h2>
+    <!-- <h2 class="title sub-title has-text-primary is-3 m-bottom">Have a joke and need a place to store it?</h2> -->
     <br>
     <br>
-
+    <!--insert your joke here: id="joke"-->
     <div class="columns">
-      <div class="column is-half">
+      <div class="column is-8 is-offset-2">
         <p class="title is-4 has-text-white your-joke">Create and store your jokes</p>
-        <!--insert your joke here: id="joke"-->
         <div class="field">
           <div class="control">
             <textarea class="textarea is-success is-large is-centered insert-spot" type="text" placeholder="Insert jokes here"></textarea>
@@ -42,20 +38,11 @@
         </div>
         <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="jokelist-form"><strong>Click Me</strong></a>
       </div>
-      <div class="column is-half">
-        <!--Click on the chuck Norris Jokes-->
-        <p class="title is-4 has-text-white chucks-joke">Click the button and become inspired!</p>
-        <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
-      </div>
     </div>
-
     <br>
-    <br>
-
-    
+    <!--Area where your jokes will populate-->
     <div class="columns">
-      <!--Area where your jokes will populate-->
-      <div class="column is-half">
+      <div class="column is-8 is-offset-2">
         <div class="card yourJokeSection">
           <header class="card-header">
             <p class="card-header-title is-centered">Your awesome list of jokes</p>
@@ -63,19 +50,37 @@
           <div class="card-content jokelist-container"></div>
         </div>
       </div>
-      <!--Area where Chucks jokes will populate-->
-      <div class="column is-half">
-        <div class="card chucksJokeSection">
-          <header class="card-header">
-            <p class="card-header-title is-centered">Chuck's insanely awesome list of jokes!</p>
-          </header>
-          <div class="card-content" id="myjoke"></div>
-        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--Click on the chuck Norris Jokes-->
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <p class="title is-4 has-text-white chucks-joke">Click the button and become inspired!</p>
+        <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
       </div>
     </div>
-
-
+    <br>
+    <!--Area where Chucks jokes will populate-->
+    <div class="column is-8 is-offset-2">
+      <div class="card chucksJokeSection">
+        <header class="card-header">
+          <p class="card-header-title is-centered">Chuck's insanely awesome list of jokes!</p>
+        </header>
+        <div class="card-content" id="myjoke"></div>
+      </div>
+    </div>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <br>
@@ -83,46 +88,49 @@
 
   <footer class="footer has-background-grey-dark">
 
-      <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child box has-background-light" id="footerimg">
-              <p class="subtitle has-text-centered">Hank <span><a href="https://www.linkedin.com/in/hank-fox-marley-745646171/"><ion-icon name="briefcase"></ion-icon></a></span></p>
-                <div class="content has-text-centered">
-                    <figure class="image is-128x128">
-                        <img class="is-rounded" src="assets/img/hank.jpg">
-                      </figure>  
-                      <p>Bulma Stylin' Genious</p>
-              </div>
-            </article>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box has-background-light" id="footerimg">
+          <p class="subtitle has-text-centered">Hank <span><a href="https://www.linkedin.com/in/hank-fox-marley-745646171/"><ion-icon
+                  name="briefcase"></ion-icon></a></span></p>
+          <div class="content has-text-centered">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="assets/img/hank.jpg">
+            </figure>
+            <p>Bulma Stylin' Genious</p>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box has-background-light" id="footerimg">
-              <p class="subtitle has-text-centered">Charlie <span><a href="https://www.linkedin.com/in/charles-hilton-1b1a7a34/"><ion-icon name="briefcase"></ion-icon></a></span></p>
-              <div class="content has-text-centered">
-                  <figure class="image is-128x128">
-                      <img class="is-rounded" src="assets/img/charlie.jpg">
-                    </figure>
-                    <p>The API magician</p>
-                </div>
-            </article>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box has-background-light" id="footerimg">
+          <p class="subtitle has-text-centered">Charlie <span><a href="https://www.linkedin.com/in/charles-hilton-1b1a7a34/"><ion-icon
+                  name="briefcase"></ion-icon></a></span></p>
+          <div class="content has-text-centered">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="assets/img/charlie.jpg">
+            </figure>
+            <p>The API magician</p>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box has-background-light" id="footerimg">
-              <p class="subtitle has-text-centered">Kaitlyn <span><a href="https://www.linkedin.com/in/kaitmccormick/"><ion-icon name="briefcase"></ion-icon></a></span></p>
-              <div class="content has-text-centered">
-                  <figure class="image is-128x128">
-                      <img class="is-rounded" src="assets/img/kaitlyn.jpg">
-                    </figure>
-                    <p>Wizard of Logic</p>
-              </div>
-            </article>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box has-background-light" id="footerimg">
+          <p class="subtitle has-text-centered">Kaitlyn <span><a href="https://www.linkedin.com/in/kaitmccormick/"><ion-icon
+                  name="briefcase"></ion-icon></a></span></p>
+          <div class="content has-text-centered">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="assets/img/kaitlyn.jpg">
+            </figure>
+            <p>Wizard of Logic</p>
           </div>
-        </div>
+        </article>
+      </div>
+    </div>
 
-      
-    </footer>
-<!--Using Icon CDN-->
-<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+  </footer>
+  <!--Using Icon CDN-->
+  <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 </body>
 
 </html>

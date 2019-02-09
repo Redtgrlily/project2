@@ -72,3 +72,8 @@ body, html {
   font-size: 18px;
   opacity: 0.4;
 }
+
+/*textarea*/
+.textarea {
+  margin-top: 20px;
+}

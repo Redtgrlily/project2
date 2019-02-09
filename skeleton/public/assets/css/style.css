@@ -65,8 +65,9 @@ body, html {
   opacity: 0.4;
 }
 
+/*not being used at the moment. Trying to style card-content with SASS*/
 .chucksJokeSection  {
-  background-color: rgb(239, 247, 255,0.8);
+  background-color: rgb(239, 247, 255,0.8) !important;
   font-family: 'Patrick Hand', cursive;
   font-size: 18px;
   opacity: 0.4;

@@ -1,17 +1,19 @@
-$(document).ready(function() {
-    // Getting a reference to the input field where user adds a new todo
-    var $newItemInput = $("textarea.new-item");
-    // Our new todos will go inside the todoContainer
-    var $jokelistContainer = $(".jokelist-container");
-    // Adding event listeners for deleting, editing, and adding todos
-    $(document).on("click", "button.button", deleteJoke);
-    $(document).on("click", "button.complete", toggleComplete);
-    $(document).on("click", ".joke-item", editJoke);
-    $(document).on("keyup", ".joke-item", finishEdit);
-    $(document).on("blur", ".joke-item", cancelEdit);
-    $(document).on("submit", "#joke-form", insertJoke);
-  
-    // Our initial jokelist array
+
+$(document).ready(function () {
+    //Input field reference where user adds a new joke.
+    var $newItemInput = $("textarea");
+    //console.log($newItemInput)
+    //Display jokes added in the joke list
+    var $jokeListContainer = $(".jokelist-container");
+    //Event listeners for CRUD
+    $(document).on("click", "button.delete", deleteJoke);
+    $(document).on("click", "#jokelist-item", editJoke);
+    $(document).on("keyup", "#jokelist-item", finishEdit);
+    $(document).on("blur", "#jokelist-item", cancelEdit);
+    $(document).on("click", "#jokelist-form", insertJoke);
+
+    //Jokes array
+
     var jokelist = [];
   
     // Getting jokes from database when page loads
@@ -37,12 +39,13 @@ $(document).ready(function() {
   
     // This function deletes a todo when the user clicks the delete button
     function deleteJoke(event) {
-      event.stopPropagation();
-      var id = $(this).data("id");
-      $.ajax({
-        method: "DELETE",
-        url: "/api/jokeList/" + id
-      }).then(getJokeList);
+        //event.stopPropogation();
+        var id = $(this).data("id");
+        $.ajax({
+            method: "DELETE",
+            url: "/api/jokelist/" + id
+        }).then(getJokeList);
+
     }
   
     // This function handles showing the input box for a user to edit a todo
@@ -96,34 +99,37 @@ $(document).ready(function() {
   
     // This function constructs a todo-item row
     function createNewRow(jokelist) {
-      var $newInputRow = $(
-        [
-          "<li class='list-group-item joke-item'>",
-          "<span>",
-          jokelist.data,
-          "</span>",
-          "<input type='text' class='input' style='display: none;'>",
-          "<button class='button delete'>x</button>",
-          "</li>"
-        ].join("")
-      );
-  
-      $newInputRow.find("button.button").data("id", jokelist.id);
-      $newInputRow.find("input.input");
-      $newInputRow.data("joke-list", jokelist);
-      return $newInputRow;
+        var $newInputRow = $(
+            [
+                "<li class='list-group-item joke-item'>",
+                "<span>",
+                jokelist.joke,
+                "</span>",
+                "<input type='text' class='edit' style='display: none;'>",
+                "<button class='delete btn btn-danger'>x</button>",
+                "</li>"
+            ].join("")
+        );
+
+        $newInputRow.find("button.delete").data("id", jokelist.id);
+        $newInputRow.find("input.edit").css("display", "none");
+        $newInputRow.data("jokeitem", jokelist);
+        if (jokelist.complete) {
+            $newInputRow.find("span").css("text-decoration", "line-through");
+        }
+        return $newInputRow;
     }
     console.log(createNewRow)
   
     // This function inserts a new todo into our database and then updates the view
     function insertJoke(event) {
-      event.preventDefault();
-      var jokelist = {
-        text: $newItemInput.val().trim()
-      };
-  
-      $.post("/api/jokeList", jokelist, getJokeList);
-      $newItemInput.val("");
+        event.preventDefault();
+        var jokelist = {
+            joke: $newItemInput.val().trim()
+        };
+
+        $.post("/api/jokelist", jokelist, getJokeList);
+        $newItemInput.val("");
     }
   });
   

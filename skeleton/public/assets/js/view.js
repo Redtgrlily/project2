@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     //Input field reference where user adds a new joke.
     var $newItemInput = $("textarea");
@@ -12,30 +13,31 @@ $(document).ready(function () {
     $(document).on("click", "#jokelist-form", insertJoke);
 
     //Jokes array
+
     var jokelist = [];
-
-    //Get jokes from DB on page load
+  
+    // Getting jokes from database when page loads
     getJokeList();
-
-    //Resets jokes on list with new jokes from the DB
+  
+    // This function resets the todos displayed with new todos from the database
     function initializeRows() {
-        $jokeListContainer.empty();
-        var rowsToAdd = [];
-        for (var i = 0; i < jokelist.length; i++) {
-            rowsToAdd.push(createNewRow(jokelist[i]));
-        }
-        $jokeListContainer.prepend(rowsToAdd);
+      $jokelistContainer.empty();
+      var rowsToAdd = [];
+      for (var i = 0; i < jokelist.length; i++) {
+        rowsToAdd.push(createNewRow(jokelist[i]));
+      }
+      $jokelistContainer.prepend(rowsToAdd);
     }
-
-    //Gets jokes from DB and update list view
+  
+    // This function grabs jokes from the database and updates the view
     function getJokeList() {
-        $.get("/api/jokelist", function (data) {
-            jokelist = data;
-            initializeRows();
-        });
+      $.get("/api/jokeList", function(data) {
+        jokelist = data;
+        initializeRows();
+      });
     }
-
-    // Delete Joke when clicking on delete icon
+  
+    // This function deletes a todo when the user clicks the delete button
     function deleteJoke(event) {
         //event.stopPropogation();
         var id = $(this).data("id");
@@ -43,48 +45,59 @@ $(document).ready(function () {
             method: "DELETE",
             url: "/api/jokelist/" + id
         }).then(getJokeList);
+
     }
-
-
-    //SHowing input box for jokes to be edited
+  
+    // This function handles showing the input box for a user to edit a todo
     function editJoke() {
-        var currentJoke = $(this).data("jokeitem");
-        $(this).children().hide();
-        $(this).children("input.edit").val(currentJoke.text);
-        $(this).children("input.edit").show();
-        $(this).children("input.edit").focus();
+      var currentJoke = $(this).data("joke-list");
+      $(this).children().hide();
+      $(this).children("input.input").val(currentJoke.text);
+      $(this).children("input.input").show();
+      $(this).children("input.input").focus();
     }
-
-    //finishes the updates
+  
+    // Toggles complete status
+    function toggleComplete(event) {
+      event.stopPropagation();
+      var jokelist = $(this).parent().data("joke-list");
+      jokelist.complete = !jokelist.complete;
+      updateJoke(jokelist);
+    }
+  
+    // This function starts updating a todo in the database if a user hits the "Enter Key"
+    // While in edit mode
     function finishEdit(event) {
-        var updatedJokeList = $(this).data("jokeitem");
-        if (event.which === 13) {
-            updatedJokeList.text = $(this).children("input").val().trim();
-            $(this).blur();
-            updateJokeList(updatedJokeList);
-        }
-    }
-
-      //updates the joke item in list
-      function updateJokeList(jokelist) {
-          $.ajax({
-              method: "PUT",
-              url: "/api/jokelist",
-              data: jokelist
-          }).then(getJokeList);
+      var updatedJoke = $(this).data("joke-list");
+      if (event.which === 13) {
+        updatedJoke.text = $(this).children("input").val().trim();
+        $(this).blur();
+        updateJoke(updatedJoke);
       }
-      //cancel editing the joke
-      function cancelEdit() {
-          var currentJoke = $(this).data("jokeitem");
-          if (currentJoke) {
-            $(this).children().hide();
-            $(this).children("input.edit").val(currentJoke.text);
-            $(this).children("span").show();
-            $(this).children("button").show();
-        }
     }
-
-    //new joke
+  
+    // This function updates a todo in our database
+    function updateJoke(jokelist) {
+      $.ajax({
+        method: "PUT",
+        url: "/api/jokeList",
+        data: jokelist
+      }).then(getJokeList);
+    }
+  
+    // This function is called whenever a todo item is in edit mode and loses focus
+    // This cancels any edits being made
+    function cancelEdit() {
+      var currentJoke = $(this).data("joke-list");
+      if (currentJoke) {
+        $(this).children().hide();
+        $(this).children("input.input").val(currentJoke.text);
+        $(this).children("span").show();
+        $(this).children("button").show();
+      }
+    }
+  
+    // This function constructs a todo-item row
     function createNewRow(jokelist) {
         var $newInputRow = $(
             [
@@ -106,7 +119,9 @@ $(document).ready(function () {
         }
         return $newInputRow;
     }
-    //puts joke in DB
+    console.log(createNewRow)
+  
+    // This function inserts a new todo into our database and then updates the view
     function insertJoke(event) {
         event.preventDefault();
         var jokelist = {
@@ -116,6 +131,5 @@ $(document).ready(function () {
         $.post("/api/jokelist", jokelist, getJokeList);
         $newItemInput.val("");
     }
-
-
-});
+  });
+  

@@ -4,7 +4,7 @@ $(document).ready(function () {
     var $newItemInput = $("textarea");
     //console.log($newItemInput)
     //Display jokes added in the joke list
-    var $jokeListContainer = $(".jokelist-container");
+    var $jokelistContainer = $(".jokelist-container");
     //Event listeners for CRUD
     $(document).on("click", "button.delete", deleteJoke);
     $(document).on("click", "#jokelist-item", editJoke);

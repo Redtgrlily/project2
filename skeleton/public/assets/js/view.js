@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Input field reference where user adds a new joke.
-    var $newItemInput = $(".textarea");
+    var $newItemInput = $("textarea");
     //console.log($newItemInput)
     //Display jokes added in the joke list
     var $jokeListContainer = $(".jokelist-container");
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
     // Delete Joke when clicking on delete icon
     function deleteJoke(event) {
-        event.stopPropogation();
+        //event.stopPropogation();
         var id = $(this).data("id");
         $.ajax({
             method: "DELETE",
@@ -90,7 +90,7 @@ $(document).ready(function () {
             [
                 "<li class='list-group-item joke-item'>",
                 "<span>",
-                jokelist.text,
+                jokelist.joke,
                 "</span>",
                 "<input type='text' class='edit' style='display: none;'>",
                 "<button class='delete btn btn-danger'>x</button>",
@@ -110,7 +110,7 @@ $(document).ready(function () {
     function insertJoke(event) {
         event.preventDefault();
         var jokelist = {
-            text: $newItemInput.val().trim()
+            joke: $newItemInput.val().trim()
         };
 
         $.post("/api/jokelist", jokelist, getJokeList);

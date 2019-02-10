@@ -71,9 +71,9 @@ module.exports = function(app) {
 
   // POST route for saving a new joke
   app.post("/api/jokeList", function(req, res) {
-    db.JokeList.create({
-      text: req.body.complete
-    }).then(function(dbJokeList) {
+    console.log("JokesAPI: ");
+    console.log(req.body);
+    db.JokeList.create(req.body).then(function(dbJokeList) {
       res.json(dbJokeList);
     });
   });

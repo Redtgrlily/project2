@@ -103,10 +103,11 @@ $(document).ready(function () {
             [
                 "<li class='list-group-item joke-item'>",
                 "<span>",
-                jokelist.joke,
+                "'" +
+                jokelist.joke + "'",
                 "</span>",
                 "<input type='text' class='edit' style='display: none;'>",
-                "<button class='delete btn btn-danger'>x</button>",
+                " <button class='delete'>delete</button>",
                 "</li>"
             ].join("")
         );

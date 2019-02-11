@@ -48,21 +48,24 @@ body, html {
 /*textarea styling*/
 .insert-spot {
   width: 350px;
-  border-radius: 5rem;
-  background-color: rgb(239, 247, 255,0.8);
+  border-radius: 5rem !important;
+  background-color: rgb(239, 247, 255,0.6);
   font-family: 'Patrick Hand', cursive;
-  font-size: 18px;
+  font-size: 30px !important;
+  color: red !important;
   text-align: center;
-  opacity: 0.4;
+  opacity: 0.6;
 }
+/* .style-card {
+  border-radius: 2rem !important;
+} */
 
-.yourJokeSection {
+.style-card-content {
   /* width: 350px; */
-  /* border-radius: 5rem; */
-  background-color: rgb(239, 247, 255,0.8);
+  /* background-color: rgb(239, 247, 255,0.8) !important; */
   font-family: 'Patrick Hand', cursive;
-  font-size: 18px;
-  opacity: 0.4;
+  font-size: 25px;
+  /* opacity: 0.4 !important; */
 }
 
 /*not being used at the moment. Trying to style card-content with SASS*/
@@ -73,7 +76,16 @@ body, html {
   opacity: 0.4;
 }
 
-/*textarea*/
-.textarea {
-  margin-top: 20px;
+.delete {
+  background-color: red !important;
+  padding: 10px;
 }
+li {
+  text-align: center !important;
+  list-style: none !important;
+}
+
+/*textarea*/
+/* .textarea {
+  margin-top: 20px;
+} */

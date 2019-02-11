@@ -54,7 +54,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary"href="signup.html">
+              <a class="button is-primary" href="signup.html">
                 <strong>Sign up</strong>
               </a>
               <a class="button is-light" href="login.html">
@@ -65,39 +65,36 @@
         </div>
       </div>
   </nav>
-<!--Beginning of content-->
-<br>
-<br>
-<div class="container">
-    <div class="column">
-        <div class="field">
-            <div class="control">
-                <ul class="joke-list">
-                    <li class="list-group-item new-item">
-                      <form id="joke-form">
-                              <textarea class="textarea is-danger new-item form-control"></textarea>
-                            <div>
-                              <button type="submit" class="button" id="jokelist-form">Add your jokes here</button>
-                            </div>
-                      </form>
-                    </li>
-                    <li>
-                        <div class="card">
-                            <div class="card-content"><span class="jokelist-container">
-                              </span></div>
-                          </div>
-                    </li>
-                  </ul>
-            </div>
-          </div>
-          
+  <!--Beginning of content-->
+  <br>
+  <br>
+  <div class="container">
+    <div class="columns" id="chuck">
+      <div class="column is-8 is-offset-2">
+        <p class="title is-1 has-text-white chucks-joke">Your Jokes On Demand</p>
+        <p class="title is-2 has-text-primary chucks-joke">Create and store your favorite jokes with this easy to use app</p>
+      </div>
     </div>
-    
-</div>
-
-<!-- 
-  stop here
- -->
+      <br>
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea insert-spot is-danger new-item form-control" placeholder="Insert Joke Here"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="card">
+          <div class="card-header">
+            <a class="button card-header-title is-centered is-primary is-large is-fullwidth" id="jokelist-form">Click Me</a>
+          </div>
+          <div class="card-content style-card-content jokelist-container"></div>
+        </div>
+      </div>
+    </div>
     <br>
     <br>
     <!--work around for responsiveness-->
@@ -109,20 +106,24 @@
       <div class="column is-8 is-offset-2">
         <p class="title is-1 has-text-primary chucks-joke">Jaw dropping Chuck Norris jokes</p>
         <p class="title is-2 has-text-white chucks-joke">for inspiration</p>
-        <a class="button is-danger is-inverted is-outlined is-large is-fullwidth" id="getJokes"><strong>Click Me</strong></a>
       </div>
     </div>
     <br>
-    <!--Area where Chucks jokes will populate-->
-    <div class="column is-8 is-offset-2">
-      <div class="card chucksJokeSection">
-        <header class="card-header">
-          <p class="card-header-title is-centered">Chuck's insanely awesome list of jokes!</p>
-        </header>
-        <div class="card-content" id="myjoke"></div>
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="card">
+          <div class="card-header">
+            <a class="button card-header-title is-centered is-primary is-large is-fullwidth" id="getJokes"><strong>Click
+                Me
+              </strong></a>
+          </div>
+          <div class="card-content" id="myjoke"></div>
+        </div>
       </div>
     </div>
   </div>
+  <br>
+  <br>
   <br>
   <br>
   <br>
@@ -132,7 +133,6 @@
   <br>
   <br>
   <footer class="footer has-background-grey-dark" id="footer">
-
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box has-background-light" id="footerimg">
@@ -171,8 +171,6 @@
         </article>
       </div>
     </div>
-
-
   </footer>
   <!--Using Icon CDN-->
   <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>

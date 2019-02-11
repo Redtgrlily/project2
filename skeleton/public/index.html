@@ -75,12 +75,12 @@
         <p class="title is-2 has-text-primary chucks-joke">Create and store your favorite jokes with this easy to use app</p>
       </div>
     </div>
-      <br>
+    <br>
     <div class="columns">
       <div class="column is-8 is-offset-2">
         <div class="field">
           <div class="control">
-            <textarea class="textarea insert-spot is-danger new-item form-control" placeholder="Insert Joke Here"></textarea>
+            <textarea class="textarea insert-spot is-primary new-item form-control" placeholder="Insert Joke Here"></textarea>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
                 Me
               </strong></a>
           </div>
-          <div class="card-content" id="myjoke"></div>
+          <div class="card-content style-chuck-content is-centered" id="myjoke"></div>
         </div>
       </div>
     </div>
@@ -125,54 +125,110 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
   <!--work around for responsiveness-->
   <div id="hack2"></div>
   <br>
   <br>
+  <div class="container">
+    <div class="columns" id="chuck">
+      <div class="column is-8 is-offset-2">
+        <p class="title is-1 has-text-primary chucks-joke">Just a couple of jokestuz</p>
+      </div>
+    </div>
+  </div>
   <br>
+  <br>
+  <!--the real footer-->
   <footer class="footer has-background-grey-dark" id="footer">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child box has-background-light" id="footerimg">
-          <p class="subtitle has-text-centered">Hank <span><a href="https://www.linkedin.com/in/hank-fox-marley-745646171/"><ion-icon
-                  name="briefcase"></ion-icon></a></span></p>
-          <div class="content has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="assets/img/hank.jpg">
-            </figure>
-            <p>Bulma Stylin' Genious</p>
+    <div class="container">
+      <div class="tile is-ancestor is-12">
+        <div class="tile is-vertical is-12">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child box has-background-grey-lighter ">
+                <p class="subtitle has-text-centered">Hank Marley <span><a href="https://www.linkedin.com/in/hank-fox-marley-745646171/"><ion-icon
+                        name="briefcase"></ion-icon></a></span></p>
+                <div class="content is-flex is-horizontal-center is-centered our-images has-text-centered">
+                  <figure class="image is-flex is-horizontal-center is-128x128">
+                    <img class="is-rounded is-flex is-horizontal-center" src="assets/img/hank.jpg">
+                  </figure>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box has-background-grey-lighter">
+                <p class="subtitle has-text-centered">Kaitlyn McCormick <span><a href="https://www.linkedin.com/in/kaitmccormick/"><ion-icon
+                        name="briefcase"></ion-icon></a></span></p>
+                <div class="content is-flex is-horizontal-center is-centered our-images has-text-centered">
+                  <figure class="image is-128x128">
+                    <img class="is-rounded" src="assets/img/kaitlyn.jpg">
+                  </figure>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box has-background-grey-lighter">
+                <p class="subtitle has-text-centered">Charlie Hilton <span><a href="https://www.linkedin.com/in/charles-hilton-1b1a7a34/"><ion-icon
+                        name="briefcase"></ion-icon></a></span></p>
+                <div class="content is-flex is-horizontal-center is-centered our-images has-text-centered">
+                  <figure class="image is-128x128">
+                    <img class="is-rounded" src="assets/img/charlie.jpg">
+                  </figure>
+                </div>
+              </article>
+            </div>
           </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box has-background-light" id="footerimg">
-          <p class="subtitle has-text-centered">Charlie <span><a href="https://www.linkedin.com/in/charles-hilton-1b1a7a34/"><ion-icon
-                  name="briefcase"></ion-icon></a></span></p>
-          <div class="content has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="assets/img/charlie.jpg">
-            </figure>
-            <p>The API magician</p>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box has-background-light" id="footerimg">
-          <p class="subtitle has-text-centered">Kaitlyn <span><a href="https://www.linkedin.com/in/kaitmccormick/"><ion-icon
-                  name="briefcase"></ion-icon></a></span></p>
-          <div class="content has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="assets/img/kaitlyn.jpg">
-            </figure>
-            <p>Wizard of Logic</p>
-          </div>
-        </article>
+        </div>
       </div>
     </div>
   </footer>
-  <!--Using Icon CDN-->
+  <!-- <figure class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/640x480.png">
+                    </figure>
+                  </article>
+              </div>
+            <div class="tile is-parent">
+          <article class="tile is-child box has-background-grey-lighter" id="footerimg">
+            <p class="subtitle has-text-centered">Hank Marley<span><a href="https://www.linkedin.com/in/hank-fox-marley-745646171/"><ion-icon
+                    name="briefcase"></ion-icon></a></span></p>
+            <div class="content has-text-centered">
+              <figure class="image is-128x128">
+                <img class="is-rounded" src="assets/img/hank.jpg">
+              </figure>
+              <p>Bulma Stylin' Genious</p>
+            </div>
+          </article>
+        </div>
+        </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box has-background-grey-lighter" id="footerimg">
+            <p class="subtitle has-text-centered">Charlie <span><a href="https://www.linkedin.com/in/charles-hilton-1b1a7a34/"><ion-icon
+                    name="briefcase"></ion-icon></a></span></p>
+            <div class="content has-text-centered">
+              <figure class="image is-128x128">
+                <img class="is-rounded" src="assets/img/charlie.jpg">
+              </figure>
+              <p>The API magician</p>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box has-background-grey-lighter" id="footerimg">
+            <p class="subtitle has-text-centered">Kaitlyn <span><a href="https://www.linkedin.com/in/kaitmccormick/"><ion-icon
+                    name="briefcase"></ion-icon></a></span></p>
+            <div class="content is-flex is-horizontal-center is-centered our-images has-text-centered">
+              <figure class="image is-centered our-images is-128x128">
+                <img class="is-rounded is-centered our-images" src="assets/img/kaitlyn.jpg">
+              </figure>
+  <p>Wizard of Logic</p>
+  </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <!-- Using Icon CDN -->
   <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 </body>
 

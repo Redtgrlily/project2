@@ -75,7 +75,6 @@ body, html {
   font-size: 18px;
   opacity: 0.4;
 }
-
 .delete {
   background-color: red !important;
   padding: 10px;
@@ -84,8 +83,17 @@ li {
   text-align: center !important;
   list-style: none !important;
 }
+.style-chuck-content {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 25px;
+  text-align: center !important;
+}
 
-/*textarea*/
-/* .textarea {
-  margin-top: 20px;
-} */
+.our-images {
+  align-content: center !important;
+  display: inline-block !important;
+}
+
+.is-horizontal-center {
+  justify-content: center !important;
+}

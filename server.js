@@ -6,7 +6,7 @@ var app = express();
 var bodyParser = require ("body-parser");
 var session = require ("express-session");
 var passport = require ("./config/passport");
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 5000;
 
 // Requiring our models for syncing
 var db = require("./models");

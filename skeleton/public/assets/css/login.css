@@ -1,0 +1,31 @@
+.loginbutton {
+    background-color: #00C7AA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.head {
+    color: #00C7AA;
+    font-weight: bold;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+.em {
+    font-size: 17px;
+} 
+
+.pass {
+    font-size: 17px;
+}
+
+.sign {
+    font-size: 18px;
+}

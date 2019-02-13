@@ -6,10 +6,6 @@
   "scripts": {
     "web": "node server.js"
   },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
